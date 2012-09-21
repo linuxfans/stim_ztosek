@@ -18,7 +18,7 @@ void timer0_irq_c (void)
 	// someone waiting
 	if ( os_scb_tbl[i].os_scb_cnt < 0 )
 	{
-	    // system timer interval is 1ms 
+	    // system timer interval is 10ms 
 	    os_scb_tbl[i].os_scb_timer --;
 	    if ( os_scb_tbl[i].os_scb_timer <= 0 )
 	    {

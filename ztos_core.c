@@ -164,7 +164,7 @@ void os_tsk_idle(void* pData)
 INT32 os_sem_p(OS_SEM SemID, UINT32 timeout)
 {
 	OS_ENTER_CRITICAL();
-	os_scb_tbl[SemID].os_scb_timer	=	timeout;
+	os_scb_tbl[SemID].os_scb_timer	=	timeout / 10;
 	os_scb_tbl[SemID].os_scb_cnt--;
 
 	//无足够资源，挂起

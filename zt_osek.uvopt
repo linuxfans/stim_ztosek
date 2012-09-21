@@ -147,6 +147,7 @@
           <Name>-UV0526M9E -O47 -S1 -C0 -N00("ARM7TDMI-S Core") -D00(4F1F0F0F) -L00(4) -FO15 -FD40000000 -FC800 -FN1 -FF0LPC_IAP2_512 -FS00 -FL07D000</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
+      <Breakpoint/>
       <WatchWindow1>
         <Ww>
           <count>0</count>
@@ -217,8 +218,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>225</TopLine>
-      <CurrentLine>225</CurrentLine>
+      <TopLine>364</TopLine>
+      <CurrentLine>255</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Startup.s</PathWithFileName>
       <FilenameWithoutPath>Startup.s</FilenameWithoutPath>
@@ -248,10 +249,10 @@
       <FileType>2</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>8</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>114</TopLine>
-      <CurrentLine>114</CurrentLine>
+      <TopLine>113</TopLine>
+      <CurrentLine>142</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\ztosek_cpu.s</PathWithFileName>
       <FilenameWithoutPath>ztosek_cpu.s</FilenameWithoutPath>
@@ -281,10 +282,10 @@
       <FileType>2</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>2</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>6</CurrentLine>
+      <TopLine>88</TopLine>
+      <CurrentLine>20</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\dev_s.s</PathWithFileName>
       <FilenameWithoutPath>dev_s.s</FilenameWithoutPath>
@@ -314,10 +315,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>12</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>43</TopLine>
-      <CurrentLine>53</CurrentLine>
+      <TopLine>81</TopLine>
+      <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\zt_osek.c</PathWithFileName>
       <FilenameWithoutPath>zt_osek.c</FilenameWithoutPath>
@@ -382,7 +383,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>69</TopLine>
+      <TopLine>70</TopLine>
       <CurrentLine>74</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\dev_uart.c</PathWithFileName>
@@ -415,7 +416,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>148</TopLine>
+      <TopLine>149</TopLine>
       <CurrentLine>154</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\ztos_core.c</PathWithFileName>
@@ -429,7 +430,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>4</TopLine>
+      <TopLine>5</TopLine>
       <CurrentLine>9</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\dev_timer.c</PathWithFileName>
@@ -458,305 +459,16 @@
       <GroupNumber>1</GroupNumber>
       <FileNumber>9</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <CurrentLine>10</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\ztos_device.c</PathWithFileName>
       <FilenameWithoutPath>ztos_device.c</FilenameWithoutPath>
     </File>
   </Group>
-
-  <AlienFiles>
-    <PathWithFilename>C:\Users\shj\Desktop\ZtOSEK\zt_osek.c~</PathWithFilename>
-    <TopLine>69</TopLine>
-    <CurrentLine>69</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
-  <AlienFiles>
-    <PathWithFilename>C:\Users\shj\Desktop\ZtOSEK\dev_nrf.h</PathWithFilename>
-    <TopLine>47</TopLine>
-    <CurrentLine>47</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
-  <AlienFiles>
-    <PathWithFilename>C:\Users\shj\Desktop\ZtOSEK\dev_uart.h</PathWithFilename>
-    <TopLine>73</TopLine>
-    <CurrentLine>73</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
-  <AlienFiles>
-    <PathWithFilename>C:\Users\shj\Desktop\ZtOSEK\ztos.h</PathWithFilename>
-    <TopLine>1</TopLine>
-    <CurrentLine>1</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
-  <AlienFiles>
-    <PathWithFilename>D:\KEIL\ARM\INC\PHILIPS\LPC213X.H</PathWithFilename>
-    <TopLine>301</TopLine>
-    <CurrentLine>309</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
-  <AlienFiles>
-    <PathWithFilename>C:\Users\shj\Desktop\stim_ztosek\dev_nrf.c</PathWithFilename>
-    <TopLine>98</TopLine>
-    <CurrentLine>103</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
-  <AlienFiles>
-    <PathWithFilename>C:\Users\shj\Desktop\stim_ztosek\LinkerScript.ld</PathWithFilename>
-    <TopLine>1</TopLine>
-    <CurrentLine>1</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
-  <MDIGroups>
-    <Orientation>1</Orientation>
-    <ActiveMDIGroup>0</ActiveMDIGroup>
-    <MDIGroup>
-      <Size>100</Size>
-      <ActiveTab>0</ActiveTab>
-      <Documents>
-        <Doc>
-          <Name>.\zt_osek.c</Name>
-          <ColumnNumber>12</ColumnNumber>
-          <TopLine>43</TopLine>
-          <CurrentLine>53</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\ztos_cpu.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\ztosek_cpu.s</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>114</TopLine>
-          <CurrentLine>114</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\dev_timer.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>4</TopLine>
-          <CurrentLine>9</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\dev_uart.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>69</TopLine>
-          <CurrentLine>74</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>C:\Users\shj\Desktop\stim_ztosek\LinkerScript.ld</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\Startup.s</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>225</TopLine>
-          <CurrentLine>225</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\dev_s.s</Name>
-          <ColumnNumber>2</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>6</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>C:\Users\shj\Desktop\stim_ztosek\dev_nrf.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>98</TopLine>
-          <CurrentLine>103</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>D:\KEIL\ARM\INC\PHILIPS\LPC213X.H</Name>
-          <ColumnNumber>12</ColumnNumber>
-          <TopLine>301</TopLine>
-          <CurrentLine>309</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\ztos_core.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>148</TopLine>
-          <CurrentLine>154</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\ztos_device.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>C:\Users\shj\Desktop\ZtOSEK\ztos.h</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>1</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>C:\Users\shj\Desktop\ZtOSEK\dev_uart.h</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>73</TopLine>
-          <CurrentLine>73</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>C:\Users\shj\Desktop\ZtOSEK\dev_nrf.h</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>47</TopLine>
-          <CurrentLine>47</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>C:\Users\shj\Desktop\ZtOSEK\zt_osek.c~</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>69</TopLine>
-          <CurrentLine>69</CurrentLine>
-        </Doc>
-      </Documents>
-    </MDIGroup>
-  </MDIGroups>
 
 </ProjectOpt>

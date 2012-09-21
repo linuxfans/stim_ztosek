@@ -7,37 +7,66 @@ OS_TSK_STK	tsk0_stk[TSK0_STK_SIZE];
 OS_TSK_STK	tsk1_stk[TSK1_STK_SIZE];
 OS_TSK_STK	tsk2_stk[TSK2_STK_SIZE];
 
+INT8 buf[32];
+
 void tsk0(void *pd)
 {
     pd = pd;			
 				
     uart0_putchars("hello\r\n");
+    IO1SET |= 1 << 20UL;
+    IO1SET |= 1 << 21UL;
+
+    
     for( ; ; )
     {					 
-	os_sem_p(SEM_TSK0,2000);
+	os_sem_p(SEM_UART0,100000);
+	uart1_putchar(uart0_getchar());
     }
 
 }
 
 void tsk1(void *pd)						 //eeprom and rfinsert check
 {
-    int i;
     pd = pd;
+
+    uart1_putchars("?");
+    uart1_getline(buf);
+    uart0_putchars(buf);
+    uart1_putchars("12000\r\n");    
+    uart1_getline(buf);
+    uart0_putchars(buf);
+    uart1_putchars("U 23130\r\n");    
+    uart1_getline(buf);
+    uart0_putchars(buf);
+    uart1_putchars("W 1073741824\r\n");    
+    uart1_getline(buf);
+    uart0_putchars(buf);
+    uart1_putchars("4`2\"@XP0PG^5`(,/E'O\\OX0#`'^``\r\n");    
+    uart1_getline(buf);
+    uart0_putchars(buf);
+    uart1_putchars("G 1073741824 A\r\n");    
+    uart1_getline(buf);
+    uart0_putchars(buf);
+    uart1_putchars("G 0 A\r\n");    
+    uart0_putchars(buf);
+    IO1SET |= 1 << 20UL;
+    IO1CLR |= 1 << 21UL;
+
+
     for( ; ; )
     {  
-	
-    uart0_putchars("hello\r\n");
-	os_sem_p(SEM_TSK1,2000);
+	os_sem_p(SEM_UART1,100000);
+	uart0_putchar(uart1_getchar());
     }
 }
 
 void tsk2(void *pd)						 //eeprom and rfinsert check
 {
-    int i;
     pd = pd;
     for( ; ; )
     {
-	os_sem_p(SEM_TSK2,100);
+	os_sem_p(SEM_TSK2,2);
     }
 }
 
@@ -50,7 +79,7 @@ void pwm_init()
   PWMMR5 = 10;
   PWMPCR = 0x2000;
   PWMTCR = 0x09;
-  DACR = 512 << 6;
+  DACR = 256 << 6;
 }
 
 	
@@ -60,11 +89,21 @@ int main()
     PINSEL0 = 0x00050005;		  
     PINSEL1 = 0x15480400;
     PINSEL2 = 0x00000000;
+ 
+    IO1DIR |= 1 << 20UL;
+    IO1DIR |= 1 << 21UL;
+    IO1CLR |= 1 << 20UL;
+    IO1CLR |= 1 << 21UL;
+	
+	while(1);
 
-    pwm_init();
+
+   
+
+    pwm_init(); 
     timer_init();
-    uart0_init(9600, 8 , 1, 0);	
-    //nrf905_4_init();	
+    uart0_init(38400, 8 , 1, 0);	
+    uart1_init(38400, 8 , 1, 0);		
     os_init();
     os_tsk_create(tsk0,NULL,&(tsk0_stk[TSK0_STK_SIZE-1]),0);  
     os_tsk_create(tsk1,NULL,&(tsk1_stk[TSK1_STK_SIZE-1]),1);

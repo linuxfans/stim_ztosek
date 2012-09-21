@@ -7,11 +7,17 @@ OS_TSK_STK	tsk0_stk[TSK0_STK_SIZE];
 OS_TSK_STK	tsk1_stk[TSK1_STK_SIZE];
 OS_TSK_STK	tsk2_stk[TSK2_STK_SIZE];
 
+INT8 buf[32];
+
 void tsk0(void *pd)
 {
     pd = pd;			
 				
     uart0_putchars("hello\r\n");
+    IO1SET |= 1 << 20UL;
+    IO1SET |= 1 << 21UL;
+
+    
     for( ; ; )
     {					 
 	os_sem_p(SEM_UART0,100000);
@@ -22,8 +28,56 @@ void tsk0(void *pd)
 
 void tsk1(void *pd)						 //eeprom and rfinsert check
 {
-    int i;
     pd = pd;
+
+    do {
+    	uart1_putchars("?");
+    } while (!uart1_getline(buf));
+    uart0_putchars(buf);
+    do {
+	uart1_putchars("Synchronized\r\n");
+    } while (!uart1_getline(buf));
+    uart0_putchars(buf);
+    while (!uart1_getline(buf));
+    uart0_putchars(buf);
+    do {
+	uart1_putchars("12000\r\n");
+    } while (!uart1_getline(buf));
+    uart0_putchars(buf);
+    while (!uart1_getline(buf));
+    uart0_putchars(buf);
+    do {
+	uart1_putchars("U 23130\r\n");
+    } while (!uart1_getline(buf));
+    uart0_putchars(buf);
+    while (!uart1_getline(buf));
+    uart0_putchars(buf);
+    do {
+	uart1_putchars("W 1073741824 20\r\n");
+    } while (!uart1_getline(buf));
+    uart0_putchars(buf);
+    while (!uart1_getline(buf));
+    uart0_putchars(buf);
+    do {
+	uart1_putchars("4`2\"@XP0PG^5`(,/E'O\\OX0#`'^``\r\n");
+    } while (!uart1_getline(buf));
+    uart0_putchars(buf);
+    do {
+	uart1_putchars("2384\r\n");
+    } while (!uart1_getline(buf));
+    uart0_putchars(buf);
+    while (!uart1_getline(buf));
+    uart0_putchars(buf);
+    do {
+	uart1_putchars("G 1073741824 A\r\n");
+    } while (!uart1_getline(buf));
+    while (!uart1_getline(buf));
+    uart0_putchars(buf);
+    uart1_putchars("G 0 A\r\n");
+
+    IO1SET |= 1 << 20UL;
+    IO1CLR |= 1 << 21UL;
+
     for( ; ; )
     {  
 	os_sem_p(SEM_UART1,100000);
@@ -33,7 +87,6 @@ void tsk1(void *pd)						 //eeprom and rfinsert check
 
 void tsk2(void *pd)						 //eeprom and rfinsert check
 {
-    int i;
     pd = pd;
     for( ; ; )
     {
@@ -60,12 +113,16 @@ int main()
     PINSEL0 = 0x00050005;		  
     PINSEL1 = 0x15480400;
     PINSEL2 = 0x00000000;
+ 
+    IO1DIR |= 1 << 20UL;
+    IO1DIR |= 1 << 21UL;
+    IO1CLR |= 1 << 20UL;
+    IO1CLR |= 1 << 21UL;
 
-    pwm_init();
+    pwm_init(); 
     timer_init();
     uart0_init(38400, 8 , 1, 0);	
-    uart1_init(38400, 8 , 1, 0);	
-    //nrf905_4_init();	
+    uart1_init(38400, 8 , 1, 0);		
     os_init();
     os_tsk_create(tsk0,NULL,&(tsk0_stk[TSK0_STK_SIZE-1]),0);  
     os_tsk_create(tsk1,NULL,&(tsk1_stk[TSK1_STK_SIZE-1]),1);

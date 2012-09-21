@@ -120,7 +120,7 @@ void uart0_init(UINT32 baud, UINT8 datab, UINT8 stopb, UINT8 parity)
 //////////////////////////////////////////////////////////////////////////
 //串口0发送字符 函数（放入发送缓冲区）
 //////////////////////////////////////////////////////////////////////////
-void uart0_putchar(UINT8 c)
+void uart0_putchar(INT8 c)
 {
     UART0_TBUF_ST *p = &uart0_tbuf;
     OS_ENTER_CRITICAL();
@@ -150,9 +150,9 @@ void uart0_putchars(INT8* c)
     }
 }
 
-void uart0_putchar_hex(UINT8 c)
+void uart0_putchar_hex(INT8 c)
 {
-    UINT8 tmp;
+    INT8 tmp;
     tmp = (c&0xf0)>>4;
     if(tmp < 0x0a)
 	uart0_putchar(0x30+tmp);
@@ -169,7 +169,7 @@ void uart0_putchar_hex(UINT8 c)
 //////////////////////////////////////////////////////////////////////////
 //串口0接收字符函数（接收缓冲区中提取）
 //////////////////////////////////////////////////////////////////////////
-UINT8 uart0_getchar(void)
+INT8 uart0_getchar(void)
 {
     UART0_RBUF_ST *p = &uart0_rbuf;
 
@@ -186,7 +186,7 @@ void uart0_getline(INT8 *c)
     }while(c[i-1] !=  '\r');
     c[i] = 0;
 }
-UINT8 uart0_getchar_pend(void)
+INT8 uart0_getchar_pend(void)
 {
 	
     UART0_RBUF_ST *p = &uart0_rbuf;
@@ -314,7 +314,7 @@ void uart1_init(UINT32 baud, UINT8 datab, UINT8 stopb, UINT8 parity)
 //////////////////////////////////////////////////////////////////////////
 //串口1发送字符函数（放入发送缓冲区）
 //////////////////////////////////////////////////////////////////////////
-void uart1_putchar(UINT8 c)
+void uart1_putchar(INT8 c)
 {
     UART1_TBUF_ST *p = &uart1_tbuf;
 
@@ -339,26 +339,30 @@ void uart1_putchar(UINT8 c)
 //////////////////////////////////////////////////////////////////////////
 //串口1接收字符函数（接收缓冲区中提取）
 //////////////////////////////////////////////////////////////////////////
-UINT8 uart1_getchar(void)
+INT8 uart1_getchar(void)
 {
     UART1_RBUF_ST *p = &uart1_rbuf;
 
     return	(p->buf [(p->out++) & (UART1_RBUF_SIZE - 1)]);
 }
 
-void uart1_getline(UINT8 *c)
+INT8 uart1_getline(INT8 *c)
 {
+    INT8 ch;
     int i = 0;
     do
     {
-	c[i] = uart1_getchar();
-	i++;
-    }while(c[i-1] != '\n');
+	if (!uart1_getchar_pend(&ch)) {
+	    return 0;
+	}
+	c[i++] = ch;
+    }while(ch != '\n');
     c[i] = 0;
+    return 1;
 }
-void uart1_putchars(UINT8* c)
+void uart1_putchars(INT8* c)
 {
-    UINT8*	p;
+    INT8*	p;
     p = c;
     while( *p != 0 )
     {
@@ -366,12 +370,14 @@ void uart1_putchars(UINT8* c)
 	p++;
     }
 }
-UINT8 uart1_getchar_pend(void)
+INT8 uart1_getchar_pend(INT8* c)
 {
 	
     UART1_RBUF_ST *p = &uart1_rbuf;
-    if(os_sem_p(SEM_UART1,100000))
-	return	(p->buf [(p->out++) & (UART1_RBUF_SIZE - 1)]);
+    if(os_sem_p(SEM_UART1,1000)) {
+	*c = (p->buf [(p->out++) & (UART1_RBUF_SIZE - 1)]);
+	return 1;
+    }
     else
 	return 0;
 }

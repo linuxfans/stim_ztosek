@@ -46,14 +46,14 @@ typedef struct u0_rbuf_st
 {
 	UINT8 in;							//输入
 	UINT8 out;							//输出
-	UINT8  buf [UART0_RBUF_SIZE];		//缓冲区空间
+	INT8  buf [UART0_RBUF_SIZE];		//缓冲区空间
 }UART0_RBUF_ST;
 
 typedef struct u0_tbuf_st
 {
 	UINT8 in;							//输入
 	UINT8 out;							//输出
-	UINT8  buf [UART0_TBUF_SIZE];		//缓冲区空间
+	INT8  buf [UART0_TBUF_SIZE];		//缓冲区空间
 }UART0_TBUF_ST;
 
 //////////////////////////////////////////////////////////////////////////
@@ -67,13 +67,13 @@ typedef struct u0_tbuf_st
 //////////////////////////////////////////////////////////////////////////
 
 EXTERN	void uart0_init(UINT32 baud, UINT8 datab, UINT8 stopb, UINT8 parity);
-EXTERN	void uart0_putchar(UINT8 c);
+EXTERN	void uart0_putchar(INT8 c);
 
 EXTERN	void uart0_getline(INT8 *c);
 EXTERN	void uart0_putchars(INT8* c);
-EXTERN	UINT8	uart0_getchar();	
-EXTERN  UINT8 uart0_getchar_pend(void);
-EXTERN  void uart0_putchar_hex(UINT8 c);
+EXTERN	INT8	uart0_getchar();	
+EXTERN  INT8 uart0_getchar_pend(void);
+EXTERN  void uart0_putchar_hex(INT8 c);
 extern	void UART0_IRQ();
 //////////////////////////////////////////////////////////////////////////
 //
@@ -118,14 +118,14 @@ typedef struct u1_rbuf_st
 {
 	UINT32 in;							//输入
 	UINT32 out;							//输出
-	UINT8  buf [UART1_RBUF_SIZE];		//缓冲区空间
+	INT8  buf [UART1_RBUF_SIZE];		//缓冲区空间
 }UART1_RBUF_ST;
 
 typedef struct u1_tbuf_st
 {
 	UINT32 in;							//输入
 	UINT32 out;							//输出
-	UINT8  buf [UART1_TBUF_SIZE];		//缓冲区空间
+	INT8  buf [UART1_TBUF_SIZE];		//缓冲区空间
 }UART1_TBUF_ST;
 
 //////////////////////////////////////////////////////////////////////////
@@ -138,11 +138,11 @@ typedef struct u1_tbuf_st
 //发送启动标志，取决于LPC21xx串口终端发送特性 参阅LPC21xx Datasheet
 //////////////////////////////////////////////////////////////////////////
 EXTERN	void uart1_init(UINT32 baud, UINT8 datab, UINT8 stopb, UINT8 parity);
-EXTERN	void uart1_putchar(UINT8 c); 
-EXTERN	void uart1_putchars(UINT8* c);   
-EXTERN	UINT8	uart1_getchar();
-EXTERN	void uart1_getline(UINT8 *c);
-EXTERN	UINT8 uart1_getchar_pend(void);
+EXTERN	void uart1_putchar(INT8 c); 
+EXTERN	void uart1_putchars(INT8* c);   
+EXTERN	INT8 uart1_getchar();
+EXTERN	INT8 uart1_getline(INT8 *c);
+EXTERN	INT8 uart1_getchar_pend(INT8 *c);
 	
 extern	void UART1_IRQ() ;
 #endif

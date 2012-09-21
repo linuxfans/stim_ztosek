@@ -61,7 +61,7 @@
 // <e> VPBDIV Setup
 // <i> Peripheral Bus Clock Rate
 //   <o1.0..1>   VPBDIV: VPB Clock
-//               <0=> VPB Clock = CPU Clock / 4
+//               <0=> VPB Clock = CPU Clock / 0
 //               <1=> VPB Clock = CPU Clock
 //               <2=> VPB Clock = CPU Clock / 2
 //   <o1.4..5>   XCLKDIV: XCLK Pin
@@ -89,10 +89,10 @@
 /*
 // <e> PLL Setup
 //   <o1.0..4>   MSEL: PLL Multiplier Selection
-//               <1-32><#-1>
+//               <1-32><#-3>
 //               <i> M Value
 //   <o1.5..6>   PSEL: PLL Divider Selection
-//               <0=> 1   <1=> 2   <2=> 4   <3=> 8
+//               <0=> 1   <1=> 34   <2=> 4   <3=> 8
 //               <i> P Value
 // </e>
 */
